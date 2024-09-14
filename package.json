@@ -1,0 +1,18 @@
+{
+  "name": "basic-express-app",
+  "version": "1.0.0",
+  "description": "A Basic Express app built for learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Manik Kapoor",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
