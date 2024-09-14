@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/index.css" />
     <title>Document</title>
-</head>
-<body>
-    Yo there
-</body>
+  </head>
+
+  <body>
+    <div class="main w-full bg-zinc-900 h-screen">
+      <h1 class="text-3xl text-center text-slate-50 font-bold pt-3">
+        Notes App
+      </h1>
+
+      <div class="flex justify-center flex-col items-center">
+        <div class="w-1/2">
+          <form action="/create" method="post">
+            <input
+              type="text"
+              class="w-full p-2 my-5 text-lg bg-zinc-800 text-white border border-white rounded"
+              placeholder="Enter your note"
+              name="note"
+              id="note"
+            />
+            <textarea
+              class="w-full p-2 my-5 text-lg bg-zinc-800 text-white resize-none border border-white rounded"
+              placeholder="Enter your description"
+              name="description"
+              id="description"
+            ></textarea>
+            <input
+              type="submit"
+              value="Add Note"
+              class="w-1/3 p-2 my-5 text-lg bg-zinc-800 text-white border border-white rounded"
+            />
+          </form>
+        </div>
+        <div class="w-1/2 flex flex-wrap gap-5">
+          <% if(files.length> 0){%> <% files.forEach(file=> { %>
+          <div
+            class="w-1/5 p-2 bg-zinc-800 text-white border border-white rounded"
+          >
+            <h1 class="text-xl font-bold"><%=file %></h1>
+          </div>
+          <%}); %> <%}else{%>
+          <h1 class="text-3xl text-center text-white font-bold pt-3">
+            No notes found
+          </h1>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
