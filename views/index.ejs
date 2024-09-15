@@ -16,7 +16,7 @@
       </h1>
 
       <div class="flex justify-center flex-col items-center">
-        <div class="w-1/2">
+        <div class="w-[90%]">
           <form action="/create" method="post">
             <input
               type="text"
@@ -38,12 +38,13 @@
             />
           </form>
         </div>
-        <div class="w-1/2 flex flex-wrap gap-5">
+        <div class="w-[90%] flex flex-wrap gap-5 mt-5">
           <% if(files.length> 0){%> <% files.forEach(file=> { %>
           <div
-            class="w-1/5 p-2 bg-zinc-800 text-white border border-white rounded"
+            class="w-[12%] p-2 flex flex-col justify-center gap-3 bg-zinc-800 border border-white rounded"
           >
-            <h1 class="text-xl font-bold"><%=file %></h1>
+            <h1 class="text-xl font-bold text-white"><%=file %></h1>
+            <a href="/note/<%=file%>" class="text-md font-bold text-blue-500">Read More</a>
           </div>
           <%}); %> <%}else{%>
           <h1 class="text-3xl text-center text-white font-bold pt-3">

@@ -12,7 +12,14 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
     file.readdir('./files', (err, files) => {
         if (err) throw err;
-        res.render('index', { files: files });
+        res.render('index', { files: files.sort() });
+    })
+})
+
+app.get('/note/:fileName', (req, res) => {
+    file.readFile(`./files/${req.params.fileName}`, 'utf8', (err, data) => {
+        if (err) throw err;
+        res.render('note', { note: data, fileName: req.params.fileName });
     })
 })
 
